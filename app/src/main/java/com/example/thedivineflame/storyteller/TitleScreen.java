@@ -1,5 +1,6 @@
 package com.example.thedivineflame.storyteller;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class TitleScreen extends ActionBarActivity {
+public class TitleScreen extends Activity {
     Button start;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class TitleScreen extends ActionBarActivity {
     public void startTale() {
         Intent intent = new Intent(getApplicationContext(), Tale.class);
         startActivity(intent);
+        finish();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

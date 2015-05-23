@@ -14,13 +14,18 @@
         android:layout_alignParentTop="true"
         android:weightSum="1">
 
-        <TextView
+        <ScrollView
             android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center_horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text= "@string/story_content"
+            android:scrollbars = "vertical"
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal" />
-
+        </ScrollView>
         <Button
             android:layout_width="200dp"
             android:layout_height="50dp"
@@ -30,7 +35,7 @@
             android:layout_weight="0.10" />
 
         <Button
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:text="Home"

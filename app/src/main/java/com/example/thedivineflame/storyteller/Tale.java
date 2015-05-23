@@ -1,7 +1,8 @@
 package com.example.thedivineflame.storyteller;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 import android.content.Intent;
 
 
-public class Tale extends ActionBarActivity {
+public class Tale extends Activity {
     Button newTale;
     Button home;
     TextView story;
@@ -20,7 +21,7 @@ public class Tale extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tale);
-        stories = new String[4];
+        stories = new String[10];
         storyLength = stories.length;
         newTale = (Button) findViewById(R.id.button2);
         home = (Button) findViewById(R.id.button3);
@@ -38,6 +39,7 @@ public class Tale extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), TitleScreen.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -69,6 +71,30 @@ public class Tale extends ActionBarActivity {
         stories[1] = "who knows which story this is.";
         stories[2] = "This is the 3rd tale";
         stories[3] = "How many tales can we possibly have?";
+        stories[4] = "I once knew a man with three fingers. He also had seven more";
+        stories[5] = "No matter how many times you click that button you won't get a good story";
+        stories[6] = "Mystery Skulls is a great band";
+        stories[7] = "#where are the good stories?";
+        stories[8] = "The chance that a story will repeat itself is pretty high";
+        stories[9] = "hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey " +
+                "hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey " +
+                "hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey" +
+                " hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey hey";
     }
     public void setStory() {
         storyLength = stories.length;
