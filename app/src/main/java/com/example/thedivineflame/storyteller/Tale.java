@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.content.Intent;
 
 
 public class Tale extends ActionBarActivity {
@@ -19,18 +20,24 @@ public class Tale extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tale);
-        stories = new String[] {"Once upon a time there was a good story. It died.", "Where are all the good stories?"};
+        stories = new String[4];
         storyLength = stories.length;
         newTale = (Button) findViewById(R.id.button2);
         home = (Button) findViewById(R.id.button3);
         story = (TextView) findViewById(R.id.textView);
-
+        populateStories();
         newTale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //populateStories();
                 setStory();
 
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), TitleScreen.class);
+                startActivity(intent);
             }
         });
     }
@@ -60,10 +67,12 @@ public class Tale extends ActionBarActivity {
     public void populateStories() {
         stories[0] = "Once upon a time there was a good story. It died.";
         stories[1] = "who knows which story this is.";
+        stories[2] = "This is the 3rd tale";
+        stories[3] = "How many tales can we possibly have?";
     }
     public void setStory() {
         storyLength = stories.length;
         int chosenStory = (int)( Math.random() * storyLength);
-        story.setText(stories[(chosenStory -1)]);
+        story.setText(stories[(chosenStory)]);
     }
 }
